@@ -1,0 +1,57 @@
+// ReserveHub — Resource Reservation Management System
+// Import at https://dbdiagram.io/ ; share using its diagram-sharing controls.
+
+Enum Role {
+  ADMIN
+  MEMBER
+}
+
+Enum ReservationStatus {
+  CONFIRMED
+  CANCELLED
+}
+
+Table User {
+  id uuid [pk, note: 'UUID primary key']
+  name varchar [not null]
+  email varchar [not null, unique]
+  passwordHash varchar [not null]
+  role Role [not null, default: 'MEMBER']
+  createdAt timestamp [not null]
+  updatedAt timestamp [not null]
+}
+
+Table Resource {
+  id uuid [pk, note: 'UUID primary key']
+  name varchar [not null]
+  description text
+  location varchar
+  capacity int
+  isActive boolean [not null, default: true]
+  createdAt timestamp [not null]
+  updatedAt timestamp [not null]
+}
+
+Table Reservation {
+  id uuid [pk, note: 'UUID primary key']
+  userId uuid [not null]
+  resourceId uuid [not null]
+  startTime timestamptz [not null]
+  endTime timestamptz [not null]
+  purpose varchar
+  status ReservationStatus [not null, default: 'CONFIRMED']
+  createdAt timestamp [not null]
+  updatedAt timestamp [not null]
+
+  indexes {
+    (resourceId, startTime, endTime)
+    (userId, createdAt)
+  }
+}
+
+Ref: Reservation.userId > User.id [delete: restrict]
+Ref: Reservation.resourceId > Resource.id [delete: restrict]
+
+// SQL constraint note: endTime > startTime.
+// PostgreSQL EXCLUDE USING GIST prevents overlap for confirmed bookings
+// on the same resource using tstzrange(startTime, endTime, '[)').

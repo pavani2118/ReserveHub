@@ -39,3 +39,30 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+/src/generated/prisma
+
+
+# AI assistant configuration
+.agents/
+.claude/
+.windsurf/
+skills-lock.json
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Generated Prisma Client
+/src/generated/prisma/
+
+# Local UI backups and downloaded archives
+/*.zip
+*.css.bak
+
+# UI installation notes
+/CHARCOAL_GOLD_README.txt
+/INDIGO_THEME_README.txt
+/UI_INSTALL_GUIDE.md
+
