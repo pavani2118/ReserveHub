@@ -221,3 +221,31 @@ src/
 ## Author
 
 Created as a Software Engineering Internship technical assessment project.
+
+
+## Project Verification
+
+### Automated Testing
+
+ReserveHub includes automated tests using Vitest.
+
+- 22 automated tests passed across 5 test files.
+- Reservation validation and conflict handling are tested.
+- Authentication and role-based access are tested using mocks.
+- Cancellation and ownership checks are covered.
+- PostgreSQL reservation constraints were verified separately.
+
+These are primarily mocked unit tests, not full
+end-to-end browser tests.
+
+For detailed results, see the
+[Testing Report](docs/TESTING_REPORT.md).
+
+### Database ER Diagram
+
+The database contains three main entities:
+User, Resource and Reservation.
+
+[View Interactive ER Diagram](https://dbdiagram.io/d/6ace3294e308025ea5e05a66)
+
+[View ER Diagram Source](docs/ReserveHub-ER.dbml)
