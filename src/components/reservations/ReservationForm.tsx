@@ -75,7 +75,7 @@ export default function ReservationForm({ resources }: Props) {
         <div className="rh-field"><label htmlFor="endTime">End date & time <span>*</span></label><input id="endTime" name="endTime" type="datetime-local" value={endTime} onChange={(event) => {setEndTime(event.target.value); setMessage("");}} required/></div>
         <div className="rh-field"><label htmlFor="purpose">Booking purpose <span>*</span></label><textarea id="purpose" name="purpose" value={purpose} onChange={(event) => {setPurpose(event.target.value); setMessage("");}} maxLength={250} minLength={3} required rows={3} placeholder="e.g. Project planning meeting"/></div>
         <div className="rh-policy"><span className="rh-policy-icon"><Icon name="shield" size={21}/></span><div><strong>Reservation policy</strong><p>Bookings can be up to 8 hours. Past times and overlapping reservations are not permitted.</p></div></div>
-        <p className="rh-form-helper"><Icon name="info" size={15}/> Enter times in your device's local timezone. Times are stored in UTC.</p>
+        <p className="rh-form-helper"><Icon name="info" size={15}/> Enter times in your device&apos;s local timezone. Times are stored in UTC.</p>
         {message && <div role="status" aria-live="polite" className={`rh-alert ${success ? "rh-alert--success" : "rh-alert--error"}`}>{message}</div>}
         <button type="submit" disabled={pending} className="rh-button rh-button--primary rh-button--full"><Icon name="calendar" size={18}/>{pending ? "Creating reservation..." : "Confirm reservation"}</button>
       </form>

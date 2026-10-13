@@ -17,6 +17,8 @@ export async function cancelReservationAction(
   _previousState: CancelState,
   _formData: FormData
 ): Promise<CancelState> {
+  void _previousState;
+  void _formData;
   const session = await auth();
 
   if (!session?.user?.id) {

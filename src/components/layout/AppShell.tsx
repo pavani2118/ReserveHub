@@ -19,7 +19,6 @@ const navigation: { key: "dashboard" | "resources" | "reservations"; href: strin
 
 export default async function AppShell({ children, section, title, userName, role = "ADMIN" }: AppShellProps) {
   const visibleLinks = navigation.filter((item) => !item.admin || role === "ADMIN");
-  const roleName = role === "ADMIN" ? "Administrator" : "Member";
   const displayName = userName || (role === "ADMIN" ? "ReserveHub Admin" : "Member");
 
   async function logout() {
