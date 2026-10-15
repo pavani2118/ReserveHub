@@ -19,17 +19,17 @@ ReserveHub helps organisations manage shared facilities and resources, coordinat
 
 ## Technology Stack
 
-| Layer | Technology |
-| --- | --- |
-| Full-stack framework | Next.js 16 (App Router) |
-| Language | TypeScript |
-| UI | React 19, Tailwind CSS 4 |
-| Database | PostgreSQL |
-| Database access | Prisma 7 with PostgreSQL adapter |
-| Authentication | Auth.js / NextAuth (Credentials), bcryptjs |
-| Input validation | Zod |
-| Automated unit testing | Vitest |
-| Version control | Git and GitHub |
+| Layer                  | Technology                                 |
+| ---------------------- | ------------------------------------------ |
+| Full-stack framework   | Next.js 16 (App Router)                    |
+| Language               | TypeScript                                 |
+| UI                     | React 19, Tailwind CSS 4                   |
+| Database               | PostgreSQL                                 |
+| Database access        | Prisma 7 with PostgreSQL adapter           |
+| Authentication         | Auth.js / NextAuth (Credentials), bcryptjs |
+| Input validation       | Zod                                        |
+| Automated unit testing | Vitest                                     |
+| Version control        | Git and GitHub                             |
 
 ## Requirements
 
@@ -102,30 +102,30 @@ Open `http://localhost:3000`, or the alternative port displayed by Next.js, and 
 
 ## Available Commands
 
-| Command | Purpose |
-| --- | --- |
-| `npm run dev` | Start the development server |
-| `npm run build` | Create an optimised production build |
-| `npm run start` | Run an existing production build |
-| `npm run lint` | Run ESLint |
-| `npm test` | Run automated tests using Vitest |
-| `npx tsc --noEmit` | Check TypeScript types without generating output |
-| `npx prisma migrate status` | View database migration status |
-| `npx prisma generate` | Generate the Prisma Client |
+| Command                     | Purpose                                          |
+| --------------------------- | ------------------------------------------------ |
+| `npm run dev`               | Start the development server                     |
+| `npm run build`             | Create an optimised production build             |
+| `npm run start`             | Run an existing production build                 |
+| `npm run lint`              | Run ESLint                                       |
+| `npm test`                  | Run automated tests using Vitest                 |
+| `npx tsc --noEmit`          | Check TypeScript types without generating output |
+| `npx prisma migrate status` | View database migration status                   |
+| `npx prisma generate`       | Generate the Prisma Client                       |
 
 ## Application Pages and API
 
-| Route | Purpose |
-| --- | --- |
-| `/` | Public landing page |
-| `/login` | User sign-in |
-| `/dashboard` | Administrator dashboard |
-| `/resources` | Administrator resource management |
-| `/resources/[id]/edit` | Edit a resource |
-| `/reservations` | Create and review reservations |
-| `GET /api/health` | Application and database health check |
-| `POST /api/reservations` | Authenticated reservation creation |
-| `/api/auth/[...nextauth]` | Authentication endpoints |
+| Route                     | Purpose                               |
+| ------------------------- | ------------------------------------- |
+| `/`                       | Public landing page                   |
+| `/login`                  | User sign-in                          |
+| `/dashboard`              | Administrator dashboard               |
+| `/resources`              | Administrator resource management     |
+| `/resources/[id]/edit`    | Edit a resource                       |
+| `/reservations`           | Create and review reservations        |
+| `GET /api/health`         | Application and database health check |
+| `POST /api/reservations`  | Authenticated reservation creation    |
+| `/api/auth/[...nextauth]` | Authentication endpoints              |
 
 ## Database Design
 
